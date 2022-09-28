@@ -1,21 +1,20 @@
-//Loads the whole page
 document.addEventListener("DOMContentLoaded", function () {
     "use strict";
-    const education = '';
-    const studylength = '';
-    const csnAllowence = '';
-    const csnLoan = '';
-    const job = '';
-    const servicePension = new Boolean();
-    var scen1BruSalary = '';
-    var scen1NetSalary = '';
-    var scen1Saving = '';
-    var scen2BruSalary = '';
-    var scen2NetSalary = '';
-    var scen2Saving = '';
-    var scen3BruSalary = '';
-    var scen3NetSalary = '';
-    var scen3Saving = '';
+    const education = 'Polis';
+    var studylength = 2;
+    var csnAllowence = 'xxxx';
+    var csnLoan = 'xxxx';
+    const job = 'Polis';
+    const servicePension = new Boolean(true);
+    var scen1BruSalary = 'xxxx';
+    var scen1NetSalary = 'xxxx';
+    var scen1Saving = 'xxxx';
+    var scen2BruSalary = 'xxxx';
+    var scen2NetSalary = 'xxxx';
+    var scen2Saving = 'xxxx';
+    var scen3BruSalary = 'xxxx';
+    var scen3NetSalary = 'xxxx';
+    var scen3Saving = 'xxxx';
 
 
     function input(){
@@ -23,7 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function results() {
-
+       document.getElementById("education").value = education; 
+       document.getElementById("studylength").innerText = studylength;
+       document.getElementById("csnAllowence").innerHTML = csnAllowence;
+       document.getElementById("csnLoan").innerHTML = csnLoan;
+       document.getElementById("job").innerHTML = job;
+       if(servicePension){
+           document.getElementById("servicePension").innerHTML = 'Ja';
+       }
+       else{
+           document.getElementById("servicePension").innerHTML = 'Nej';
+       }
     }
 
     function graphs() {

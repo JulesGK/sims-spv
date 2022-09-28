@@ -1,4 +1,4 @@
-<?php include_once 'includes/config.php'; ?>
+<?php include_once 'config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,4 +14,4 @@
 </head>
 <body>
 
-<?php include_once 'includes/mainmenu.php'; ?>
+<?php include_once 'mainmenu.php'; ?>
