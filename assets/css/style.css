@@ -2,3 +2,25 @@
 @import 'main-footer.css';
 @import 'main-hero.css';
 @import 'shared.css';
+
+
+/* CSS for the table of the results*/
+table, tr, td{
+    border-collapse: collapse;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-color: blue;
+    font-weight: bold;
+}
+
+td:nth-child(2){
+    color: red;
+}
+
+td:nth-child(3){
+    color: green;
+}
+
+td:nth-child(4){
+    color: purple;
+}
