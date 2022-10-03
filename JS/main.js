@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const education = '';
     var studylength = 0;
-    var csnAllowence = '';
-    var csnLoan = '';
+    var csnAllowence = 3360;
+    var csnLoan = 7728;
     const job = '';
     const servicePension = new Boolean();
     var scen1BruSalary = '';
@@ -73,17 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
        }
         
        if(scen2BruSalary < roof){
-        document.getElementById("totScen2AlmPension").innerHTML = (scen2BruSalary * year * publicPension * worklife);
+        document.getElementById("totScen2AlmPension").innerHTML = (scen2BruSalary * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        else{
-        document.getElementById("totScen2AlmPension").innerHTML = (roof * year * publicPension * worklife);
+        document.getElementById("totScen2AlmPension").innerHTML = (roof * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        
        if(scen3BruSalary < roof){
-        document.getElementById("totScen3AlmPension").innerHTML = (scen3BruSalary * year * publicPension * worklife);
+        document.getElementById("totScen3AlmPension").innerHTML = (scen3BruSalary * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        else{
-        document.getElementById("totScen3AlmPension").innerHTML = (roof * year * publicPension * worklife);
+        document.getElementById("totScen3AlmPension").innerHTML = (roof * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
 
        //Service pension
