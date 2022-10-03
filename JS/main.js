@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const education = '';
     var studylength = 0;
-    var csnAllowence = '';
-    var csnLoan = '';
+    var csnAllowence = 3360;
+    var csnLoan = 7728;
     const job = '';
     const servicePension = new Boolean();
     var scen1BruSalary = '';
@@ -19,11 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var scen3Saving = '';
 
     var year = 12; //months in a year
+    var semester = 10 //Amount of months you study
     var publicPension = 0.185; //Percentage of salary going towards public pension
     var retire = 67; // The calculator assumes the avrage retirement age of 67
     var adult = 18; // The age at which you finish secondary highschool
     var worklife = retire - (adult + studylength); //The length of your worklife is from when you begin working to your retirement 
     var roof = 47000; // The roof for how much you can earn that will go into public pension
+    var csnToPublicPension = 0.21; //The average percentage of CSN allowence that goes to public pension
     var servicePensionUnder47k = 0.045 //The average percentage of your salary that goes into service pension when earning under 47 thousand kr
     var servicePensionOver47k = 0.3 //The average percentage of your salary that goes into service pension when earning over 47 thousand kr
     
@@ -64,24 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
        //Public pension
        //Since there's a roof for how much can go into the public pension we need to check against it
        if(scen1BruSalary < roof){
-        document.getElementById("totScen1AlmPension").innerHTML = (scen1BruSalary * year * publicPension * worklife);
+        document.getElementById("totScen1AlmPension").innerHTML = (scen1BruSalary * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        else{
-        document.getElementById("totScen1AlmPension").innerHTML = (roof * year * publicPension * worklife);
+        document.getElementById("totScen1AlmPension").innerHTML = (roof * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
         
        if(scen2BruSalary < roof){
-        document.getElementById("totScen2AlmPension").innerHTML = (scen2BruSalary * year * publicPension * worklife);
+        document.getElementById("totScen2AlmPension").innerHTML = (scen2BruSalary * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        else{
-        document.getElementById("totScen2AlmPension").innerHTML = (roof * year * publicPension * worklife);
+        document.getElementById("totScen2AlmPension").innerHTML = (roof * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        
        if(scen3BruSalary < roof){
-        document.getElementById("totScen3AlmPension").innerHTML = (scen3BruSalary * year * publicPension * worklife);
+        document.getElementById("totScen3AlmPension").innerHTML = (scen3BruSalary * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
        else{
-        document.getElementById("totScen3AlmPension").innerHTML = (roof * year * publicPension * worklife);
+        document.getElementById("totScen3AlmPension").innerHTML = (roof * year * publicPension * worklife + (csnAllowence * semester * csnToPublicPension) * studylength));
        }
 
        //Service pension
