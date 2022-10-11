@@ -2,7 +2,11 @@
 
 <!DOCTYPE html>
 <html lang="sv">
+<<<<<<< HEAD
 <head> 
+=======
+<head>
+>>>>>>> 47e6dc63154bb8ebe38d909967f3491a7d6ee960
     <title><?= $site_title . $divider . $page_title; ?></title>
     <meta charset="utf-8">
 
@@ -19,7 +23,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
