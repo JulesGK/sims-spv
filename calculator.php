@@ -2,8 +2,10 @@
 <?php
 include("includes/jobs.class.php");
 include("assets/css/calculator.css");
+include ("includes/getjob.php");
 
 ?>
+<script type="text/javascript" src="JS/calculator.js"></script>
 
 <header>
     <div class ="overlay">
@@ -35,14 +37,14 @@ include("assets/css/calculator.css");
                     <div class = "row">
                         <div class="col-25">
 
-                            <label for="csnAllowence"><i class="csnAllowence"></i> CSN bidrag
+                            <label for="csnAllowance"><i class="csnAllowance"></i> CSN bidrag
                                 <div class="tooltip">&#9432;
                                     <span class="tooltiptext">Den kommer visa din CSN Bidrag, beror på antal år din utbildning är!</span>
                                 </div>
                             </label>
 
                             <div class ="display">
-                                <output  id="totalStudyAllowence">0</output>
+                                <output  id="totalStudyAllowance">0</output>
 
                             </div>
                         </div>
@@ -72,6 +74,7 @@ include("assets/css/calculator.css");
                             <SELECT   id =job  >
                                 <option > --Välj yrke--</option>
                                 <?php
+                                $db = mysqli_connect("localhost", "admin", "password", "admin");;
                                 $jobresult= mysqli_query($db, "SELECT work_name FROM occupation");
                                 while($row=mysqli_fetch_assoc($jobresult)){
                                     $work_id= $row['work_id'];
