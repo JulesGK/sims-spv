@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 900px;
+}
+.header {
+    height: 30vh;
+    text-align: center;
+    overflow: hidden;
+    color: #000000;
+    text-shadow: 1px 1px 1px #333;
+    padding:50px;
+    background-image:
+            linear-gradient(to right bottom,
+            rgba(76, 216, 255, 0.8),
+            rgba(30, 108, 217, 0.8)),
+            url('https://images.pexels.com/photos/11391951/pexels-photo-11391951.jpeg');
+
+    background-size: cover;
+    background-position: 40% 60%;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+body {
+    font-family: Georgia, serif;;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 8px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+#col-25fix {
+    margin-top: 10%;
+    padding-left: 8%;
+}
+.col-75 {
+    -ms-flex: 75%;
+    flex: 75%;
+}
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+label {
+    margin-bottom: 10px;
+    display: block;
+
+}
+.container {
+    background-color: transparent !important;;
+    padding: 50px 20px 15px 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: yellow;
+    color: darkblue;
+    font-style: italic;
+    font-weight: 100;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 105%;
+    margin-left: -60px;
+
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type=number] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type=search] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type=radio] {
+    width: 25%;
+    margin-bottom: 5px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+select{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.display{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

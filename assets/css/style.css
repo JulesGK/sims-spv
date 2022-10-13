@@ -2,6 +2,8 @@
 @import 'main-footer.css';
 @import 'main-hero.css';
 @import 'shared.css';
+<<<<<<< HEAD
+=======
 
 
 /* CSS for the table of the results*/
@@ -24,3 +26,4 @@ td:nth-child(3){
 td:nth-child(4){
     color: purple;
 }
+>>>>>>> 47e6dc63154bb8ebe38d909967f3491a7d6ee960
