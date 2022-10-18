@@ -1,7 +1,7 @@
 <?php
 // Open connection to the database
 //$db = mysqli_connect("localhost", "admin", "password", "admin");
-$db= mysqli_connect('studentmysql.miun.se', 'arkh2000', 'qc18cg6j', 'arkh2000');
+$db = mysqli_connect('localhost', 'root', '', 'admin');
 
 
 if (mysqli_connect_errno()) {

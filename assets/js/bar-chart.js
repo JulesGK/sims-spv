@@ -202,8 +202,8 @@ function updateChart(el) {
     studylength
   );
 
-
-  console.log({totalSavingScen1, totalServicePensionScen1, totalPublicPensionScen1, totalPensionScen1});
+  
+  console.log(totalSavingScen1, totalServicePensionScen1, totalPublicPensionScen1, totalPensionScen1);
   barChart.data.datasets[0].data = [
     totalSavingScen1, 
     totalSavingScen2, 

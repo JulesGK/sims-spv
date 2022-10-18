@@ -1,18 +1,13 @@
-<!DOCTYPE html>
+
 <?php
 include("includes/jobs.class.php");
-include("assets/css/calculator.css");
-include ("includes/getjob.php");
+include("includes/getjob.php");
 
 ?>
-<script type="text/javascript" src="JS/calculator.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-<header>
-    <div class ="overlay">
-        <h1>Räkna din pension</h1>
-    </div>
-</header>
-<body>
+
 <div class ="row">
     <div class = "column">
         <div class = "col-75">
@@ -74,7 +69,7 @@ include ("includes/getjob.php");
                             <SELECT   id =job  >
                                 <option > --Välj yrke--</option>
                                 <?php
-                                $db = mysqli_connect("localhost", "admin", "password", "admin");;
+                                $db = mysqli_connect('localhost', 'root', '', 'admin');;
                                 $jobresult= mysqli_query($db, "SELECT work_name FROM occupation");
                                 while($row=mysqli_fetch_assoc($jobresult)){
                                     $work_id= $row['work_id'];
@@ -104,17 +99,17 @@ include ("includes/getjob.php");
                     <div class = "row">
                         <div class = "col-25" style ="width:128px; height:50px; padding-left: 10px;">
 
-                            <label for = "Scenario1" <i class "Scenario1"></i> Scenario 1 </label>
+                            <label for = "Scenario1" <i class="Scenario1"></i> Scenario 1 </label>
 
                         </div>
                         <div class = "col-25" style = "padding-left: 4px;">
 
-                            <label for = "Scenario2" <i class "Scenario2"></i>Scenario 2 </label>
+                            <label for = "Scenario2" <i class="Scenario2"></i>Scenario 2 </label>
 
                         </div>
                         <div class = "col-25" style ="padding-left:4px;">
 
-                            <label for = "Scenario3" <i class "Scenario3"></i> Scenario 3 </label>
+                            <label for = "Scenario3" <i class="Scenario3"></i> Scenario 3 </label>
 
                         </div>
                     </div>
@@ -181,7 +176,7 @@ include ("includes/getjob.php");
                     </div>
                     <div class =row>
                         <div class ="col-25" style="margin: 0px 0px 0px 0px;">
-                            <label for class = "monthSaving" <i class "bruSalary"></i> Månadssparande
+                            <label for class = "monthSaving" <i class="bruSalary"></i> Månadssparande
                             <div class="tooltip">&#9432;
                                 <span class="tooltiptext">Ange hur mycket du vill månadsspara per månad tills du blir 67 år!</span>
                             </div>
@@ -212,4 +207,3 @@ include ("includes/getjob.php");
         </div>
     </div>
 </div>
-</body>
