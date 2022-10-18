@@ -46,14 +46,14 @@ include("includes/getjob.php");
 
                     <div class="col-25">
 
-                        <label for="csnAllowence"><i class="csnAllowence"></i> CSN bidrag
+                        <label for="csnAllowance"><i class="csnAllowance"></i> CSN bidrag
                             <div class="tooltip">&#9432;
                                 <span class="tooltiptext">Den kommer visa din CSN Bidrag, beror på antal år din utbildning är!</span>
                             </div>
                         </label>
 
                         <div class ="display">
-                            <output  id="totalStudyAllowence">0</output>
+                            <output  id="totalStudyAllowance">0</output>
                             </div>
                         </div>
 
@@ -122,19 +122,19 @@ include("includes/getjob.php");
                 <div class = "row">
 
                     <div class = "col-25" style ="width:128px; height:50px; padding-left: 10px;">
-                        <label for = "Scenario1" <i class "Scenario1"></i> Scenario 1 </label>
+                        <label for = "Scenario1" <i class = "Scenario1"></i> Scenario 1 </label>
                         </div>
 
                     <div class = "col-25" style = "padding-left: 4px;">
-                        <label for = "Scenario2" <i class "Scenario2"></i>Scenario 2 </label>
+                        <label for = "Scenario2" <i class ="Scenario2"></i>Scenario 2 </label>
                         </div>
                     <div class = "col-25" style ="padding-left:4px;">
-                        <label for = "Scenario3" <i class "Scenario3"></i> Scenario 3 </label>
+                        <label for = "Scenario3" <i class ="Scenario3"></i> Scenario 3 </label>
                         </div>
                     </div>
                 <div class =row>
 
-                    <div class ="col-25" style="margin: 0px 0px 0px 0px;">
+                    <div class ="col-25" style="margin: 0 0 0 0;">
                         <label for class = "bruSalary" <i class ="bruSalary"></i> Lön före skatt (Bruttolön)
                         <div class="tooltip">&#9432;
                             <span class="tooltiptext">Ange din bruttolön och det kommer visa automatiskt din nettolön</span>
@@ -172,7 +172,7 @@ include("includes/getjob.php");
 
                 <div class =row>
 
-                    <div class ="col-25" style="margin: 0px 0px 0px 0px;">
+                    <div class ="col-25" style="margin: 0 0 0 0;">
 
                         <label for class = "bruSalary" <i class ="bruSalary" ></i> Lön efter skatt (Nettolön) </label>
                         </div>
@@ -213,9 +213,9 @@ include("includes/getjob.php");
 
 
                 <div class =row>
-                    <div class ="col-25" style="margin: 0px 0px 0px 0px;">
+                    <div class ="col-25" style="margin: 0 0 0 0;">
 
-                        <label for class = "monthSaving" <i class "bruSalary"></i> Månadssparande
+                        <label for class = "monthSaving" <i class = "bruSalary"></i> Månadssparande
                         <div class="tooltip">&#9432;
                             <span class="tooltiptext">Ange hur mycket du vill månadsspara per månad tills du blir 67 år!</span>
                             </div>
