@@ -27,22 +27,15 @@ function calculateNettoSalary(){
     document.getElementById("scen3NetSalary").innerHTML = scen3result;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
+    document.getElementById("scen2BruSalary").addEventListener("change", calculateNettoSalary);
 
-$(document).on('change','#job', function(){
 
-
-    var work_id = $(this).val();
-
-    $.ajax({
-        url: 'getjob.php',
-        type: 'GET',
-        data: {work:work_id},
-        dataType: 'html',
-        success:function(data){
-            parseInt($("#scen2BruSalary").html(data));
-
-            calculateNettoSalary();
-        }
+    document.getElementById("job").addEventListener("change", function(){
+        document.getElementById("scen2BruSalary").value = document.getElementById("job").value;
+        calculateNettoSalary();
+        //newValue2();
+        //updateChart();
     });
-
 });

@@ -1,7 +1,7 @@
 
-
 <?php
-include("includes/jobs.class.php"); ?>
+include("jobs.class.php"); ?>
+
 
 <?php
 function fetch_data(){
@@ -20,7 +20,6 @@ function fetch_data(){
 $fetchData = fetch_data();
 show_data($fetchData);
 function show_data($fetchData){
-
     foreach ($fetchData as $data) {
         echo "<td>".$data['salary']."</td>";
     }

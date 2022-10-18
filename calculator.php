@@ -5,7 +5,16 @@ include("includes/getjob.php");
 
 ?>
 <script type="text/javascript" src="JS/main.js"></script>
+<script type="text/javascript" src="JS/calculator.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<header>
+    <div class="header">
+        <h1>Räkna ut din pension</h1>
+        <h3> Kalkylatorn beräknar på ett ungefär där den utgår ifrån att du börjar studera vid 18 år, jobbar efter utbildningen, pensionerar dig när du är 67 år och ingen ränta på eget sparande</h3>
+    </div>
+</header>
+<body>
 
 
 <div class ="row">
@@ -69,12 +78,13 @@ include("includes/getjob.php");
                             <SELECT   id =job  >
                                 <option > --Välj yrke--</option>
                                 <?php
-                                $db = mysqli_connect('localhost', 'root', '', 'admin');;
-                                $jobresult= mysqli_query($db, "SELECT work_name FROM occupation");
+                                $db= mysqli_connect("localhost", "admin", "password", "admin");
+                                $jobresult= mysqli_query($db, "SELECT work_name, salary FROM occupation");
+
                                 while($row=mysqli_fetch_assoc($jobresult)){
-                                    $work_id= $row['work_id'];
+                                    $salary= $row['salary'];
                                     $work_name=$row['work_name'];
-                                    echo "<option value='".$work_id."' >".$work_name."</option>";
+                                    echo "<option value='".$salary."' >".$work_name."</option>";
                                 }
                                 ?>
                             </SELECT>
@@ -133,9 +143,7 @@ include("includes/getjob.php");
                         <div class = "col-25">
                             <label for="scen2BruSalary"><i class="scen2BruSalary"></i></label>
 
-                            <div class ="display">
-                                <output  id="scen2BruSalary"  oninput="calculateNettoSalary()">0</output>
-                            </div>
+                            <input type="number" id="scen2BruSalary" name="scen2BruSalary" disabled>
 
                         </div>
                         <div class = "col-25">
@@ -206,4 +214,4 @@ include("includes/getjob.php");
             </div>
         </div>
     </div>
-</div>
+</div></body>
