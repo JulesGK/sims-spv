@@ -1,7 +1,7 @@
 <?php
 // Open connection to the database
 //$db = mysqli_connect("localhost", "admin", "password", "admin");
-$db = mysqli_connect('localhost', 'root', '', 'admin');
+$db = mysqli_connect('localhost', 'root', '', 'sims_db');
 
 
 if (mysqli_connect_errno()) {
@@ -9,5 +9,4 @@ if (mysqli_connect_errno()) {
     exit();
 }
 ?>
-
 

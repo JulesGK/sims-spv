@@ -1,7 +1,8 @@
 <?php
-$page_title = "Home";
+$page_title = "Startsida";
 include_once 'includes/header.php';
 ?>
+
 <section class="header py-5">
     <div class="container">
       <div class="header-desc-row row mb-4">
@@ -23,7 +24,7 @@ include_once 'includes/header.php';
 include_once 'views/own-saving.php';
 include_once 'views/service-pension.php';
 include_once 'views/public-pension.php';
-include_once 'views/bar-chart.php';
+include_once 'views/chart.php';
 ?>
 
 
