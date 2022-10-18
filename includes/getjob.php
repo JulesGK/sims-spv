@@ -16,6 +16,7 @@ function fetch_data(){
     }
 }
 
+/*
 $fetchData = fetch_data();
 show_data($fetchData);
 function show_data($fetchData){
@@ -24,4 +25,7 @@ function show_data($fetchData){
         echo "<td>".$data['salary']."</td>";
     }
 }
+*/
+
+
 ?>

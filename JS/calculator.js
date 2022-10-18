@@ -1,6 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
 function calculateCsn(){
     var studylength = '0';
     var csnAllowance = '3360';
@@ -14,6 +11,7 @@ function calculateCsn(){
     var result2 = semester * studyLengthValue * csnLoan;
     document.getElementById("totalStudyLoan").innerHTML = result2;
 }
+
 function calculateNettoSalary(){
 
     var scen1Salary = document.getElementById("scen1BruSalary").value;
@@ -28,7 +26,6 @@ function calculateNettoSalary(){
     var scen3result = parseInt(scen3Salary - scen3Salary * 1/3) ;
     document.getElementById("scen3NetSalary").innerHTML = scen3result;
 }
-
 
 
 $(document).on('change','#job', function(){
