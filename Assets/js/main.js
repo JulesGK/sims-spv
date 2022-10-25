@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var publicPensionCalculation = year * publicPension * worklife;
     var servicePensionCalculation = year * servicePensionUnder47k * worklife;
     var servicePensionExtra = year * servicePensionOver47k * worklife;
+    var lifeSpan = 280; //total months in life expectancy after turning 65 year
 
     //Calulations
     //Public pension and Service Pension
