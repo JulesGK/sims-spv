@@ -1,9 +1,10 @@
 
 <style>
-<?php include "Assets/css/style.css";?>
+<?php include_once 'assets/css/style.css';?>
 </style>
-<script src="Assets/js/main.js"></script>
-<script src="Assets/js/pyramid.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/pyramid.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -41,9 +42,9 @@
             <div class="header-desc-row row1 mb-4">
                 <div class="header-desc-col col-12 col-md-9 mx-auto">
                     <?php
-                    include_once 'Views/own-saving.php';
-                    include_once 'Views/service-pension.php';
-                    include_once 'Views/public-pension.php';
+                    include_once 'views/own-saving.php';
+                    include_once 'views/service-pension.php';
+                    include_once 'views/public-pension.php';
                     ?>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <!-- Public Pension  -->
 <style>
     <?php
-    include "Assets/css/style.css";
+    include "assets/css/style.css";
     ?>
 
 </style>
