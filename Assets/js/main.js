@@ -88,12 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
        document.getElementById("studyLength").addEventListener("change", calculateCsn);
 
        function calculateCsn(){
-
+        csnToPublicPension = csnAllowence * semester * 0.21 * document.getElementById("studyLength").value;
         var studyLengthValue = document.getElementById("studyLength").value;
         var result1 = semester * studyLengthValue * csnAllowence ;
         document.getElementById("csnAllowance").value = result1;
         var result2 = semester * studyLengthValue * csnLoan;
         document.getElementById("csnLoan").value = result2;
+        newValue1();
+        newValue2();
+        newValue3();
+        updateChart();
         }
     
         document.getElementById("scen1BruSalary").addEventListener("change", calculateNettoSalary);
@@ -197,6 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("scen1Saving").addEventListener("change", newValue1);
         document.getElementById("scen2Saving").addEventListener("change", newValue2);
         document.getElementById("scen3Saving").addEventListener("change", newValue3);
+        document.getElementById("scen1BruSalary").addEventListener("change", updateChart);
+        document.getElementById("scen3BruSalary").addEventListener("change", updateChart);
+        document.getElementById("scen1Saving").addEventListener("change", updateChart);
+        document.getElementById("scen2Saving").addEventListener("change", updateChart);
+        document.getElementById("scen3Saving").addEventListener("change", updateChart);
 
 
         function newValue1(){
@@ -207,8 +216,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("scen1BruSalary").value = Math.round(document.getElementById("scen1BruSalary").value);
             }
             if(document.getElementById("scen1BruSalary").value >= scen2BruSalary){
-                document.getElementById("scen1BruSalary").value = scen2BruSalary - 1;
+                if(scen2BruSalary == 0){
+                    document.getElementById("scen1BruSalary").value = scen2BruSalary; 
+                }
+                else{
+                    document.getElementById("scen1BruSalary").value = scen2BruSalary - 1;
+                }
             }
+            if(document.getElementById("scen1BruSalary").value < 0){
+                document.getElementById("scen1BruSalary").value = 0;
+            }
+
+            if(document.getElementById("scen1Saving").value >= document.getElementById("scen1NetSalary").value){
+                document.getElementById("scen1Saving").value = document.getElementById("scen1NetSalary").value;
+            }
+
             for(var i = 0; i <= worklife; i++){
             scen1BruSalary = document.getElementById("scen1BruSalary").value;
             scen1Saving = document.getElementById("scen1Saving").value;
@@ -225,41 +247,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 totScen1Saving = worklife * scen1Saving * year;
         
                 chart.options.data[0].dataPoints[i].y = 
-                    ((totScen1AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
-                    totScen1TjanstePension/worklife * i + 
-                    totScen1Saving/worklife * i
+                ((totScen1AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
+                totScen1TjanstePension/worklife * i + 
+                totScen1Saving/worklife * i
                 
             }
             chart.render();
-            updateChart();
+            
             
         }
 
         function newValue2(){
             
-            for(var i = 0; i <= worklife; i++){
-            scen2BruSalary = document.getElementById("scen2BruSalary").value;
-            scen2Saving = document.getElementById("scen2Saving").value;
+            if(document.getElementById("scen2Saving").value >= document.getElementById("scen2NetSalary").value){
+                document.getElementById("scen2Saving").value = document.getElementById("scen2NetSalary").value;
+            }
 
-        if(scen2BruSalary < roof){
-            totScen2AlmPension = scen2BruSalary * publicPensionCalculation + csnToPublicPension;
-            totScen2TjanstePension = scen2BruSalary * servicePensionCalculation;
-        }
-        else{
-            totScen2AlmPension = roof * publicPensionCalculation  + csnToPublicPension;
-            totScen2TjanstePension = roof * servicePensionCalculation + (scen2BruSalary - roof) * servicePensionExtra;
-        }
-        
-        totScen2Saving = worklife * scen2Saving * year;
-        
+            for(var i = 0; i <= worklife; i++){
+                scen2BruSalary = document.getElementById("scen2BruSalary").value;
+                scen2Saving = document.getElementById("scen2Saving").value;
+
+                if(scen2BruSalary < roof){
+                    totScen2AlmPension = scen2BruSalary * publicPensionCalculation + csnToPublicPension;
+                    totScen2TjanstePension = scen2BruSalary * servicePensionCalculation;
+                }
+                else{
+                    totScen2AlmPension = roof * publicPensionCalculation  + csnToPublicPension;
+                    totScen2TjanstePension = roof * servicePensionCalculation + (scen2BruSalary - roof) * servicePensionExtra;
+                }
+            
+                totScen2Saving = worklife * scen2Saving * year;
+            
                 chart.options.data[1].dataPoints[i].y = 
-                    ((totScen2AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
-                    totScen2TjanstePension/worklife * i + 
-                    totScen2Saving/worklife * i
-                
+                ((totScen2AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
+                totScen2TjanstePension/worklife * i + 
+                totScen2Saving/worklife * i
+                    
             }
             chart.render();
-            updateChart();
+            
         }
 
         function newValue3(){
@@ -267,36 +293,51 @@ document.addEventListener("DOMContentLoaded", function () {
             if(isNaN(document.getElementById("scen3BruSalary").value)){
                 document.getElementById("scen3BruSalary").value = 0;
             }
+
             if(document.getElementById("scen3BruSalary").value % 1 != 0){
                 document.getElementById("scen3BruSalary").value = Math.round(document.getElementById("scen3BruSalary").value);
             }
-            if(document.getElementById("scen3BruSalary").value <= scen2BruSalary){
-                
-                document.getElementById("scen3BruSalary").value = +1 + +scen2BruSalary;
-            }
-            for(var i = 0; i <= worklife; i++){
-            scen3BruSalary = document.getElementById("scen3BruSalary").value;
-            scen3Saving = document.getElementById("scen3Saving").value;
 
-        if(scen3BruSalary < roof){
-            totScen3AlmPension = scen3BruSalary * publicPensionCalculation + csnToPublicPension;
-            totScen3TjanstePension = scen3BruSalary * servicePensionCalculation;
-        }
-        else{
-            totScen3AlmPension = roof * publicPensionCalculation  + csnToPublicPension;
-            totScen3TjanstePension = roof * servicePensionCalculation + (scen3BruSalary - roof) * servicePensionExtra;
-        }
-        
-        totScen3Saving = worklife * scen3Saving * year;
+            if(document.getElementById("scen3BruSalary").value <= scen2BruSalary){
+                if(scen2BruSalary == 0){
+                    document.getElementById("scen3BruSalary").value = scen2BruSalary
+                }
+                else{
+                    document.getElementById("scen3BruSalary").value = +1 + +scen2BruSalary;
+                }
+            }
+
+            if(document.getElementById("scen3BruSalary").value < 0){
+                document.getElementById("scen3BruSalary").value = 0;
+            }
+
+            if(document.getElementById("scen3Saving").value >= document.getElementById("scen3NetSalary").value){
+                document.getElementById("scen3Saving").value = document.getElementById("scen3NetSalary").value;
+            }
+
+            for(var i = 0; i <= worklife; i++){
+                scen3BruSalary = document.getElementById("scen3BruSalary").value;
+                scen3Saving = document.getElementById("scen3Saving").value;
+
+                if(scen3BruSalary < roof){
+                    totScen3AlmPension = scen3BruSalary * publicPensionCalculation + csnToPublicPension;
+                    totScen3TjanstePension = scen3BruSalary * servicePensionCalculation;
+                }
+                else{
+                    totScen3AlmPension = roof * publicPensionCalculation  + csnToPublicPension;
+                    totScen3TjanstePension = roof * servicePensionCalculation + (scen3BruSalary - roof) * servicePensionExtra;
+                }
+                
+                totScen3Saving = worklife * scen3Saving * year;
         
                 chart.options.data[2].dataPoints[i].y = 
-                    ((totScen3AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
-                    totScen3TjanstePension/worklife * i + 
-                    totScen3Saving/worklife * i
+                ((totScen3AlmPension - csnToPublicPension)/worklife) * i + csnToPublicPension + 
+                totScen3TjanstePension/worklife * i + 
+                totScen3Saving/worklife * i
                 
             }
             chart.render();
-            updateChart();
+            
         }
         
         //Bar-chart
