@@ -79,13 +79,13 @@ include_once 'getjob.php';
                             </div>
                         </div>
                         <div class = "row">
-                            <div class = "col-25" style ="width:128px; height:50px; color: rgb(109, 120, 173); padding-left: 10px;">
-                                <label for = "Scenario1" <i class  </label>
-                            </div>"Scenario1"> Scenario 1
+                            <div class = "col-25" style ="width:128px; height:50px;color: rgb(109, 120, 173); padding-left: 10px;">
+                                <label for = "Scenario1" <i class "Scenario1"></i> Scenario 1 </label>
+                            </div>
                             <div class = "col-25" style = "padding-left: 4px; color: rgb(81, 205, 160);">
                                 <label for = "Scenario2" <i class "Scenario2"></i>Scenario 2 </label>
                             </div>
-                            <div class = "col-25" style ="padding-left:4px;color: rgb(223, 121, 112);">
+                            <div class = "col-25" style ="padding-left:4px; color: rgb(223, 121, 112);">
                                 <label for = "Scenario3" <i class "Scenario3"></i> Scenario 3 </label>
                             </div>
                         </div>
